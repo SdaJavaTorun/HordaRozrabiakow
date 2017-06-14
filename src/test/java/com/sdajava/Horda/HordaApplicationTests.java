@@ -14,16 +14,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class HordaApplicationTests {
 
 
-	LoginController loginController = new LoginController();
+	@Be
 	UserRepository userRepository;
 
 
-	@Test
 
-	public void findUserByUsernameMarek(){
-		User user1 = new User();  //Określić jego dane
-		userRepository.save(user1);
-		userRepository.findByUsername("Marek");
 
 
 

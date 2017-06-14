@@ -16,6 +16,12 @@ public class User {
     public User() {
     }
 
+    public User(String username, String password, Set<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     public Long getId() {
@@ -42,9 +48,14 @@ public class User {
         this.password = password;
     }
 
+    @ManyToMany
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     public Set<Role> getRoles() {
         return roles;
     }
+
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
