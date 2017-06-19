@@ -1,7 +1,5 @@
 package com.sdajava.Horda;
 
-import com.sdajava.Horda.controller.LoginController;
-import com.sdajava.Horda.model.Role;
 import com.sdajava.Horda.model.User;
 import com.sdajava.Horda.repository.UserRepository;
 import org.junit.Before;
@@ -10,8 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.jws.soap.SOAPBinding;
 
 import static org.junit.Assert.assertEquals;
 
