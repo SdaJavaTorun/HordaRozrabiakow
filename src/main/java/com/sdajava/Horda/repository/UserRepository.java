@@ -19,6 +19,8 @@ public interface UserRepository extends CrudRepository <User, Long> {
 
     User findById (Long id);
 
+    User removeAllByUsername (String username);
+
 
     @Override
     User findOne(Long aLong);
