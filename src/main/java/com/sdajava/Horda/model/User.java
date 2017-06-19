@@ -48,7 +48,7 @@ public class User {
         this.password = password;
     }
 
-    @ManyToMany
+    @ManyToOne
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))

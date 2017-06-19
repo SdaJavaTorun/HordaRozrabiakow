@@ -13,16 +13,24 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class HordaApplicationTests {
 
-
-	@Be
 	UserRepository userRepository;
 
-
-
-
-
-
+	@Test
+	public void shouldFindUserByUsernameTest(){
 
 	}
+
+	@Test
+	public void shouldFindUserByUserIdEqualsTwo (){
+
+	}
+
+
+
+
+
+
+
+
 
 }
