@@ -1,49 +1,48 @@
 package com.sdajava.Horda.repository;
 
+import com.sdajava.Horda.model.Role;
 import com.sdajava.Horda.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by RENT on 2017-06-13.
  */
 
 @Repository
-public interface UserRepository extends CrudRepository{
-    User findByUsername (String username);
+public interface UserRepository extends CrudRepository <User, Long> {
+
+    User findByUsername(String username);
+
+    User findById (Long id);
+
+    User removeAllByUsername (String username);
+
 
     @Override
-    Object save(Object o);
+    User findOne(Long aLong);
 
     @Override
-    Iterable save(Iterable iterable);
+    boolean exists(Long aLong);
 
     @Override
-    Object findOne(Serializable serializable);
+    Iterable<User> findAll();
 
     @Override
-    boolean exists(Serializable serializable);
-
-    @Override
-    Iterable findAll();
-
-    @Override
-    Iterable findAll(Iterable iterable);
+    Iterable<User> findAll(Iterable<Long> iterable);
 
     @Override
     long count();
 
     @Override
-    void delete(Serializable serializable);
+    void delete(Long aLong);
 
     @Override
-    void delete(Object o);
-
-    @Override
-    void delete(Iterable iterable);
-
-    @Override
-    void deleteAll();
+    void delete(User user);
 }
+
+
+
