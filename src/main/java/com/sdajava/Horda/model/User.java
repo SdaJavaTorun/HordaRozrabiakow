@@ -8,6 +8,9 @@ import java.util.Set;
 @Entity
 @Table (name = "users")
 public class User {
+    public enum Role {
+        CANDIDATE, CHIEF, ADMIN;
+    }
     private Long id;
     private String username;
     private String password;
@@ -37,6 +40,9 @@ public class User {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getPassword() {
         return password;
