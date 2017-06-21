@@ -1,6 +1,4 @@
-package com.sdajava.Horda.register;
-
-import org.springframework.web.bind.annotation.GetMapping;
+package com.sdajava.Horda.controller;
 
 import java.util.Map;
 
@@ -9,9 +7,9 @@ import java.util.Map;
  */
 public class RegisterController {
 
-    @GetMapping({"/register", "/"})
+    /*@GetMapping({"/register", "/"})
     public String publicPage(Map<String, Object> model) {
         model.put("text", "Zarejestruj się!");
         return "page";
-    }
+    }*/
 }
