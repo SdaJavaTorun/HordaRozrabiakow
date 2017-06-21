@@ -15,23 +15,23 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 public class HordaApplicationTests {
 
-	@Autowired
-	 UserRepository userRepository;
-
-	@Before
-	public void setUp(){ userRepository.deleteAll();}
-
-	@Test
-	public void shouldFindUserByUsernameTest(){
-		//given
-		User user1 = userRepository.save(new User ("Test", "Test", null ));
-		User user2 = userRepository.save(new User ("Test2", "Test2", null));
-		//when
-		userRepository.findByUsername("Test");
-		//then
-		assertEquals(userRepository.findByUsername("Test"), user1);
-
-	}
+//	@Autowired
+//	 UserRepository userRepository;
+//
+//	@Before
+//	public void setUp(){ userRepository.deleteAll();}
+//
+//	@Test
+//	public void shouldFindUserByUsernameTest(){
+//		//given
+//		User user1 = userRepository.save(new User ("Test", "Test", null ));
+//		User user2 = userRepository.save(new User ("Test2", "Test2", null));
+//		//when
+//		userRepository.findByUsername("Test");
+//		//then
+//		assertEquals(userRepository.findByUsername("Test"), user1);
+//
+//	}
 
 //	@Test
 //	public void shouldFindUserByUserIdEqualsTwo (){

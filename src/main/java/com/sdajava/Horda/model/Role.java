@@ -35,7 +35,7 @@
 //        this.name = name;
 //    }
 //
-//    @OneToMany(mappedBy = "roles")
+//    @OneToMany(mappedBy = "role")
 //    public Set<User> getUsers() {
 //        return users;
 //    }
