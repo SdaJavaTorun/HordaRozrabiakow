@@ -1,0 +1,1 @@
+Accessu nie ma
