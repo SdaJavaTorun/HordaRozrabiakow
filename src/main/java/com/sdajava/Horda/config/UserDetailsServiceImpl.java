@@ -28,15 +28,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
         if (user == null) {
-            throw new UsernameNotFoundException("Login failed");
+            throw new UsernameNotFoundException("login failed");
         }
-
-        /*Set<GrantedAuthority> grantedAuthorities = user.getRole()
-                .stream()
-                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
-                .collect(Collectors.toSet());
-
-        User.Role<GrantedAuthority> grantedAuthorityUser = new User.Role("ROLE_" + user.getRole());*/
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
 

@@ -2,12 +2,11 @@ package com.sdajava.Horda.model;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
-
 
 @Entity
 @Table (name = "users")
 public class User {
+
     public enum Role {
         CANDIDATE, CHIEF, ADMIN;
     }
@@ -15,10 +14,6 @@ public class User {
     private String username;
     private String password;
     private Role role;
-
-    public User() {
-    }
-    
 
     public User(String username, String password, Role role) {
         this.username = username;

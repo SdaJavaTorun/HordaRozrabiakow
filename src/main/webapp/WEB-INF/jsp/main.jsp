@@ -20,6 +20,6 @@ This is ${text}
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <div><input type="submit" value="Zaloguj"/></div>
 </form>
-<div><a href="register.jsp">Nie ma konta ... to do rejestracji :-)</a></div>
+<div><a href="/user/registration">Nie ma konta ... to do rejestracji :-)</a></div>
 </body>
 </html>
