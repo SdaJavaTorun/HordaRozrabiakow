@@ -8,8 +8,9 @@
 <body>
 This is ${text}
 <h1>Hello <b><c:out value="${pageContext.request.remoteUser}"/></b> </h1>
-<form action="/logout" method="post">
-    <input type="submit" value="Sign Out"/>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-</form>
+<%--<form action="/logout" method="post">--%>
+    <%--<input type="submit" value="Sign Out"/>--%>
+    <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+<%--</form>--%>
 </body>
+</html>
