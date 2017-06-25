@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<br />
+<br />
+<footer class="container-fluid">
+    <div class="jumbotron">
+        <h5>Horda Rozrabiaków Copyright 2017</h5>
+    </div>
+</footer>
+
+</body>
+</html>
