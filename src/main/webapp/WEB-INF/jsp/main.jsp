@@ -43,7 +43,7 @@
 </form>
 <div class="col-sm-offset-2">
     <p class="help-block">Nie masz jeszcze konta zarejestruj się</p>
-    <a class="btn btn-primary btn-lg" href="/user/registration" role="button">Zarejestruj się</a>
+    <a class="btn btn-primary btn-lg" href="register" role="button">Zarejestruj się</a>
 </div>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.sdajava.Horda.config;
 import com.sdajava.Horda.model.User;
 import com.sdajava.Horda.repository.UserRepository;
 import com.google.common.collect.Sets;
+import com.sdajava.Horda.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("login failed");
