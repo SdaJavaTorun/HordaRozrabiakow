@@ -4,22 +4,46 @@
 <html>
 <head>
     <title>Horda Rozrabiaków</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Horda Rozrabiaków pozdrawia</h1>
-This is ${text}
+<div class="col-sm-offset-2">
+    <h1 class="display-2">Horda Rozrabiaków pozdrawia</h1>
+</div>
+    <%--This is ${text}--%>
 <c:if test="${param.error ne null}">
     <div>Nieprawidłowe hasło.</div>
 </c:if>
 <c:if test="${param.logout ne null}">
     <div>Użytkownik został wylogowany.</div>
 </c:if>
-<form action="/login" method="post">
-    <div><label for="username">Login: <input type="text" id="username" name="username"/></label></div>
-    <div><label for="password">Hasło: <input type="password" id="password" name="password"/></label></div>
+<form class="form-horizontal" action="/login" method="post">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="username">Login:</label>
+        <div class="col-sm-4">
+            <input class="form-control col-sm-6" type="text" id="username" name="username" placeholder="Nazwa użytkownika"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="password">Hasło:</label>
+        <div class="col-sm-4">
+            <input class="form-control col-sm-6" type="password" id="password" name="password" placeholder="Hasło"/>
+            <%--<p class="help-block">Example block-level help text here.</p>--%>
+        </div>
+    </div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    <div><input type="submit" value="Zaloguj"/></div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-success" type="submit">Zaloguj</button>
+        </div>
+    </div>
 </form>
-<div><a href="/user/registration">Nie ma konta ... to do rejestracji :-)</a></div>
+<div class="col-sm-offset-2">
+    <p class="help-block">Nie masz jeszcze konta zarejestruj się</p>
+    <a class="btn btn-primary btn-lg" href="/user/registration" role="button">Zarejestruj się</a>
+</div>
 </body>
 </html>
