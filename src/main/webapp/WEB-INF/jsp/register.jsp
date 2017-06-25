@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td><button type="submit" >Zarejestruj się</button></td>
-            <td><button type="reset"> Anuluj </button> </td>
+            <td><button><a href="main"> Anuluj </a> </button></td>
         </tr>
     </table>
 

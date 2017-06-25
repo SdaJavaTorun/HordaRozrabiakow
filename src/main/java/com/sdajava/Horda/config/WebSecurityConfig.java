@@ -1,5 +1,7 @@
 package com.sdajava.Horda.config;
 
+import com.sdajava.Horda.model.PersonForm;
+import com.sdajava.Horda.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,10 +28,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/public").permitAll()
+                .antMatchers("/", "/public", "/register").permitAll()
                 .antMatchers(HttpMethod.POST, "/").permitAll()
                 //.antMatchers("/admin").hasRole("ADMIN")
-                //.anyRequest().authenticated()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
 //                .and()
@@ -46,12 +48,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
-//        auth
-//                .inMemoryAuthentication()
-//                .withUser("user").password("user").roles("USER")
+//                     auth
+//                    .inMemoryAuthentication()
+//               .withUser("user").password("").roles("USER");
 //                .and()
 //                .withUser("admin").password("admin").roles("ADMIN");
-        auth.userDetailsService(userDetailsService)
+              auth.userDetailsService(userDetailsService)
                 .passwordEncoder(bCryptPasswordEncoder());
     }
 }

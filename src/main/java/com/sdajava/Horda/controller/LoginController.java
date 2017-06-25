@@ -1,21 +1,26 @@
 package com.sdajava.Horda.controller;
 
+import com.sdajava.Horda.model.PersonForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Map;
 
 @Controller
 public class LoginController {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
+    @Autowired
+    UserDetailsService userDetailsService;
+
     @PostMapping("/login")
-    public String publicPage(Map<String, Object> model) {
+    public String publicPage(PersonForm personForm) {
         logger.info("Odwiedzono publiczny endpoint");
-        model.put("text", "A PUBLIC PAGE!");
+        UserDetails userDetails = userDetailsService.loadUserByUsername(personForm.getFirstName());
+        logger.info("Zaladowalem usera: " + userDetails.getUsername());
         return "page";
     }
 }
