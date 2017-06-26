@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../css/main.css" type="text/css" />
 </head>
 <body>
 <form class="form-horizontal" action="/login" method="post">
@@ -27,7 +28,7 @@
     <%--<div class="col-sm-4">--%>
         <%--<input class="form-control col-sm-6" type="text" id="surname" name="surname" placeholder="Nazwisko"/>--%>
     <%--</div>--%>
-</div>
+<%--</div>--%>
 <div class="form-group">
     <label class="col-sm-2 control-label" for="datetimepicker10">Data urodzenia:</label>
     <div class="col-sm-4">
@@ -113,5 +114,6 @@
     </div>
 </div>
 </form>
+<img src="img/praca2.jpg" class="pull-right img-rounded" alt="PRACA2" width="50" height="50">
 </body>
 </html>
