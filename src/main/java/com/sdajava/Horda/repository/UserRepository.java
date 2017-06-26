@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends CrudRepository <User, Long> {
 
-    User findByUsername(String username);
+    User findByLogin(String login);
 
     User findById (Long id);
 
-    User removeAllByUsername (String username);
+    User removeAllByLogin (String login);
 
     @Override
     User findOne(Long aLong);

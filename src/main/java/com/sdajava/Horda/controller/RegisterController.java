@@ -23,7 +23,7 @@ public class RegisterController {
     }
 
     @GetMapping
-    public String showForm(PersonForm personForm) {
+    public String showForm(User user) {
         return "register";
     }
 
@@ -37,9 +37,8 @@ public class RegisterController {
 //    }
 
     @PostMapping
-    public String createAcount(PersonForm personForm) {
-        User user;
-        userService.addUser(user = new User(personForm.getFirstName(), personForm.getPassword(), User.Role.CANDIDATE));
+    public String createAcount(User user) {
+        userService.addUser(new User(user.getLogin(), user.getPassword(), user.getEmail(), User.Role.CANDIDATE));
         System.out.println(user.toString());
         return "redirect:/main";
     }

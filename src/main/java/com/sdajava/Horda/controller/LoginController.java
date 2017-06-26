@@ -1,6 +1,6 @@
 package com.sdajava.Horda.controller;
 
-import com.sdajava.Horda.model.PersonForm;
+import com.sdajava.Horda.model.User;
 import com.sdajava.Horda.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ public class LoginController {
     }
 
     @PostMapping
-    public String getLoginData (PersonForm personForm) {
+    public String getLoginData (User user) {
         logger.info("doszlismy do funckji getLoginData");
         return "page";
     }

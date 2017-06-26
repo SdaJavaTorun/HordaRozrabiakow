@@ -18,11 +18,15 @@ public class UserDto {
 
     @NotNull
     @NotEmpty
-    private String username;
+    private String login;
 
     @NotNull
     @NotEmpty
     private String password;
+
+    @NotNull
+    @NotEmpty
+    private String email;
 
     @NotNull
     @NotEmpty
@@ -39,12 +43,12 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -53,6 +57,14 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public User.Role getRole() {
@@ -64,6 +76,6 @@ public class UserDto {
     }
 
     public User fromDto() {
-        return new User(username, password, role);
+        return new User(login, password, email, role);
     }
 }
