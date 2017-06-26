@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Created by user on 2017-06-19.
- */
-
 @Controller
 @RequestMapping (value = "/register")
 public class RegisterController {
@@ -25,7 +21,6 @@ public class RegisterController {
     public RegisterController(UserService userService) {
         this.userService = userService;
     }
-
 
     @GetMapping
     public String showForm(PersonForm personForm) {
@@ -41,12 +36,11 @@ public class RegisterController {
 //
 //    }
 
-      @PostMapping
-        public String createAcount(PersonForm personForm) {
+    @PostMapping
+    public String createAcount(PersonForm personForm) {
         User user;
-           userService.addUser(user =new User(personForm.getFirstName(), personForm.getPassword(), User.Role.CANDIDATE));
-          System.out.println(user.toString());
+        userService.addUser(user = new User(personForm.getFirstName(), personForm.getPassword(), User.Role.CANDIDATE));
+        System.out.println(user.toString());
         return "redirect:/main";
-      }
-
+    }
 }

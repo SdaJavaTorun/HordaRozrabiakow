@@ -1,1 +1,1 @@
-Error page
+Coś poszło nie tak

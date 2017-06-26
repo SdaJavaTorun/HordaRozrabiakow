@@ -7,7 +7,7 @@
 <c:if test="${param.logout ne null}">
     <div>Użytkownik został wylogowany.</div>
 </c:if>
-<form class="form-horizontal" action="/login" method="post">
+<form class="form-horizontal" action="login" method="post">
     <div class="form-group">
         <label class="col-sm-2 control-label" for="username">Login:</label>
         <div class="col-sm-4">
