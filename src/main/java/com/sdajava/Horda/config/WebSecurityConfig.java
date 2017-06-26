@@ -17,8 +17,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+//    @Autowired
+//    private UserDetailsService userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "/public", "/register").permitAll()
-                .antMatchers(HttpMethod.POST, "/").permitAll()
+                .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers("/login").hasRole(User.Role.CANDIDATE.name())
                 //.antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/main").defaultSuccessUrl("/login")
                 .permitAll()
                 .and()
-                .logout()
+                .logout().logoutUrl("/main")
                 .permitAll()
                 .and()
                 .exceptionHandling().accessDeniedPage("/403");
@@ -49,12 +49,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
-//                     auth
-//                    .inMemoryAuthentication()
-//               .withUser("user").password("").roles("USER");
-//                .and()
-//                .withUser("admin").password("admin").roles("ADMIN");
-              auth.userDetailsService(userDetailsService)
-                .passwordEncoder(bCryptPasswordEncoder());
+                     auth
+                    .inMemoryAuthentication()
+                    .withUser("user").password("").roles(User.Role.CANDIDATE.name());
+                    //.and()
+                    //.withUser("admin").password("admin").roles("ADMIN");
+   //           auth.userDetailsService(userDetailsService)
+     //           .passwordEncoder(bCryptPasswordEncoder());
     }
 }
