@@ -1,0 +1,12 @@
+body {
+
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 30px;
+    color: black;
+    font-family: 'Barrio', cursive;
+    text-align: center;
+    margin-top: 3cm;
+
+}
